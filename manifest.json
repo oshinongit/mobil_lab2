@@ -1,0 +1,20 @@
+{
+  "short_name": "Labb 2",
+  "name": "Mobilutveckling Labb 2",
+  "icons": [
+    {
+      "src": "/mango192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/mango512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e65100"
+}
