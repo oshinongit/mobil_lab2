@@ -11,45 +11,60 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <style>
+      .content-page {
+        padding: 10px;
+      }
+
+      li {
+        border-bottom: 1px solid gray;
+        font-size: 20px;
+        padding: 15px 15px 20px 120px;
+        position: relative;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        counter-reset: ordered-list;
+      }
+
+      li:before {
+        color: gray;
+        content: counter(ordered-list);
+        counter-increment: ordered-list;
+        font-family: sans-serif;
+        font-size: 38px;
+        left: 60px;
+        line-height: 38px;
+        position: absolute;
+      }
+
+      .exotic-title {
+        color: #4B0082;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+  </style>
 </head>
 
 <body>
   <ons-navigator swipeable id="theNavigator" page="index.html"></ons-navigator>
 
-  <template id="index.html">
-    <ons-page id="page1">
-      <ons-toolbar>
-        <div class="center"></div>
-        <div class="right">
-          <ons-toolbar-button>
-            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-      </ons-toolbar>
-
-
-      <ons-list style="margin-top: 50px">
-        <ons-list-item id="bdog" tappable>Blasting Dog</ons-list-item>
-        <ons-list-item id="mmoose" tappable>Melting Moose</ons-list-item>
-        <ons-list-item id="ghog" tappable>Gnarly Hog</ons-list-item>
-      </ons-list>
-
-      <ons-button id="about_button" modifier="quiet">About</ons-button>
-    </ons-page>
-  </template>
-
   <template id="page2.html">
     <ons-page id="page2">
       <ons-toolbar>
-        <div class="left">
-          <ons-back-button>Back</ons-back-button>
-        </div>
-        <div class="center"></div>
+        <div class="center exotic-title">Blasting Dog</div>
       </ons-toolbar>
 
-      <div>
-        <h1>Blasting Dog</h1>
-        <ul>
+      <div class="content-page">
+        <ol>
           <li>Stand on your feet.</li>
           <li>Experience the contact with the ground.</li>
           <li>Feel into the soles of the feet.</li>
@@ -60,7 +75,7 @@
           <li>Neck.</li>
           <li>Head.</li>
           <li>Feel the connection between the top of the head and the feet.</li>
-        </ul>
+        </ol>
       </div>
 
     </ons-page>
@@ -69,15 +84,10 @@
   <template id="moose.html">
     <ons-page id="moose">
       <ons-toolbar>
-        <div class="left">
-          <ons-back-button>Back</ons-back-button>
-        </div>
-        <div class="center"></div>
+        <div class="center exotic-title">Melting Moose</div>
       </ons-toolbar>
-
-      <div>
-        <h1>Melting Moose</h1>
-        <ul>
+      <div class="content-page">
+        <ol>
           <li>Let your arms hang loose.</li>
           <li>Become aware of the shoulders.</li>
           <li>Slightly lift one shoulder and release it.</li>
@@ -85,7 +95,7 @@
           <li>Lift the other shoulder and release it.</li>
           <li>Alternate three more times on each side.</li>
           <li>Experience the breath flowing in and out of the body.</li>
-        </ul>
+        </ol>
       </div>
 
     </ons-page>
@@ -94,15 +104,10 @@
   <template id="hog.html">
     <ons-page id="hog">
       <ons-toolbar>
-        <div class="left">
-          <ons-back-button>Back</ons-back-button>
-        </div>
-        <div class="center"></div>
+        <div class="center exotic-title">Gnarly Hog</div>
       </ons-toolbar>
-
-      <div>
-        <h1>Gnarly Hog</h1>
-        <ul>
+      <div class="content-page">
+        <ol>
           <li>Become aware of your face.</li>
           <li>Feel the forehead.</li>
           <li>The eyebrows.</li>
@@ -116,7 +121,7 @@
           <li>Tongue.</li>
           <li>Whole of the head.</li>
           <li>The space surrounding the head.</li>
-        </ul>
+        </ol>
       </div>
 
     </ons-page>
@@ -124,20 +129,22 @@
 
   <template id="about.html">
     <ons-page id="about_page">
-      <ons-toolbar>
-        <div class="left">
-          <ons-back-button>Back</ons-back-button>
-        </div>
-        <div class="center"></div>
-      </ons-toolbar>
-
-      <p>This is lab 2, we are group X</p>
+        <ons-toolbar>
+            <div class="center exotic-title">About</div>
+          </ons-toolbar>
+      <div class="content-page">
+      <p>This is lab 2, we are group ???</p>
+      </div>
   </template>
 
   <ons-tabbar swipeable position="auto">
-    <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home">
+    <ons-tab page="about.html" label="Home" icon="ion-home, material:md-home">
     </ons-tab>
-    <ons-tab page="tab2.html" label="Tab 2" icon="md-settings">
+    <ons-tab page="page2.html" label="Dog" icon="md-settings">
+    </ons-tab>
+    <ons-tab page="moose.html" label="Moose" icon="md-settings">
+    </ons-tab>
+    <ons-tab page="hog.html" label="Hog" icon="md-settings">
     </ons-tab>
   </ons-tabbar>
 
